@@ -1,0 +1,425 @@
+Bootstrap:
+
+
+Bootstrap is a library to develop/build responsive webpages.
+==>as soon as the browser window gets resize,the content of the webpage will be adjusted according to the size of the device/screen.
+==> in bootstrap we will get already defined css and js  to make our page responsive,so that we need not have to write any css and js from the scratch.
+==>without using bootstrap , we can make our page responsive.
+in css we can use media query to create responsive webpages. we need to target specific screen size.
+@max-width(500px)
+{
+	div{}
+}
+@max-width(900px)
+{
+	div{}
+}
+
+//it will take lots of time and efforts
+this limitations is removed by using bootstrap
+======================================================================
+what is grid system?
+==>bootstrap will divide browsers width(any devices) into 12 equal columns and using these 12 columns we will decide how to organize our content.
+==>whenever we are creating any division,we need to specify how many columns this div will occupy.
+
+adv is 
+when this page is open on large screen content will be display side by side, and whenever we resize the browser,content will be placed in new line.
+==========================================
+<html lang="en">
+<head>
+<meta character="utf-8">//denotes character encoding scheme
+<meta name="viewport" content=width=device-width,initial-scale=1">
+
+
+using meta tag we can define metadata about our webpage
+available area on browser to display page is called as viewport.
+web page should be equal to size of the width of device.horizontal scrolling is not good practise.
+=================================================
+
+=================================================================
+//if we want to work with grid ,we have to create multiple columns.
+before creating a col,we need to create a row
+
+<div class="row"> 
+<div class="col">// create col
+</div>
+<div class="col">// create col
+</div>
+
+</div>
+
+==>Now we need to specify how many columns this 1st and 2nd division will occupy.if not specify it will display equal size.
+==>1 row contains 2 col and these col will display side by side.
+===================================================================================
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+   <div class="row">
+	<div class="col">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum aspernatur vitae eligendi libero, consequatur eaque ullam sapiente in debitis, maiores sed laborum illo natus, pariatur suscipit temporibus. Culpa, incidunt deleniti.</p>
+	</div>
+	<div class="col">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem temporibus debitis ducimus sunt earum porro accusantium saepe, est iure aperiam harum ratione, suscipit quas ea sequi, maiores voluptates aspernatur iste!</p>
+	</div>
+
+   </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+=========================================
+==========================================================================
+//first division should occupy 1st 6 col and 2nd division shld occupy 6 col
+//maximum each divison can occupy 12 columns
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+   <div class="row">
+	<div class="col-6">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum aspernatur vitae eligendi libero, consequatur eaque ullam sapiente in debitis, maiores sed laborum illo natus, pariatur suscipit temporibus. Culpa, incidunt deleniti.</p>
+	</div>
+	<div class="col-6">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem temporibus debitis ducimus sunt earum porro accusantium saepe, est iure aperiam harum ratione, suscipit quas ea sequi, maiores voluptates aspernatur iste!</p>
+	</div>
+
+   </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+==>if i resize the window,still it display size by size. it is not being display one after the another.
+because we have mentioned on  whichever the device size is it should occupy col-6 ===========================================
+
+<div class="col-lg-6"> // 6 columns should be occupied only on larger screen and if screen is reduced it will occupy entire width of the screen.
+sm
+md
+====================================================================
+col{n}
+n-->1 to 12 it will occupy same no of col on every device
+col-lg-n-->it will occupy n no of col only on large devices.
+col-sm-n
+col-md-n
+==========================================================================
+no spaces left for row from left as well as from right
+we will create container. so that our content will get some space.
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+
+   
+    
+   <div class="row">
+	<div class="col-lg-6">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum aspernatur vitae eligendi libero, consequatur eaque ullam sapiente in debitis, maiores sed laborum illo natus, pariatur suscipit temporibus. Culpa, incidunt deleniti.</p>
+	</div>
+	<div class="col-lg-6">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem temporibus debitis ducimus sunt earum porro accusantium saepe, est iure aperiam harum ratione, suscipit quas ea sequi, maiores voluptates aspernatur iste!</p>
+	</div>
+
+   </div>
+
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+//container-fluid
+
+
+
+===============================================
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+
+   
+    
+   <div class="row">
+	<div class="col-lg-4">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum aspernatur vitae eligendi libero, consequatur eaque ullam sapiente in debitis, maiores sed laborum illo natus, pariatur suscipit temporibus. Culpa, incidunt deleniti.</p>
+	</div>
+	<div class="col-lg-4">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem temporibus debitis ducimus sunt earum porro accusantium saepe, est iure aperiam harum ratione, suscipit quas ea sequi, maiores voluptates aspernatur iste!</p>
+	</div>
+  <div class="col-lg-4">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem temporibus debitis ducimus sunt earum porro accusantium saepe, est iure aperiam harum ratione, suscipit quas ea sequi, maiores voluptates aspernatur iste!</p>
+	</div>
+
+   </div>
+
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
+=====================================================
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+
+   
+    
+   <div class="row">
+	<div class="col-lg-4">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum aspernatur vitae eligendi libero, consequatur eaque ullam sapiente in debitis, maiores sed laborum illo natus, pariatur suscipit temporibus. Culpa, incidunt deleniti.</p>
+	</div>
+	<div class="col-lg-4">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem temporibus debitis ducimus sunt earum porro accusantium saepe, est iure aperiam harum ratione, suscipit quas ea sequi, maiores voluptates aspernatur iste!</p>
+	</div>
+  <div class="col-lg-4">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem temporibus debitis ducimus sunt earum porro accusantium saepe, est iure aperiam harum ratione, suscipit quas ea sequi, maiores voluptates aspernatur iste!</p>
+	</div>
+
+   </div>
+
+  </div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore voluptatem dignissimos sit et reiciendis? Autem atque debitis numquam, veniam quos praesentium quibusdam, iure quia omnis quam eveniet nam unde. Sint!</p>
+    </div>
+    <div class="col-lg-8">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt distinctio dolor temporibus at doloremque delectus nisi numquam quia fugiat possimus veritatis accusamus, provident doloribus ut debitis veniam quos quibusdam? Sequi!</p>
+
+    </div>
+
+
+  </div>
+
+
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
+============================================
+
+mt-
+ml
+mr
+mb
+======================================
+bootstrap color variants
+blue->primary
+green->success
+red->danger
+yellow->warning
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+
+   
+    
+   <div class="row">
+	<div class="col-lg-4">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum aspernatur vitae eligendi libero, consequatur eaque ullam sapiente in debitis, maiores sed laborum illo natus, pariatur suscipit temporibus. Culpa, incidunt deleniti.</p>
+	</div>
+	<div class="col-lg-4">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem temporibus debitis ducimus sunt earum porro accusantium saepe, est iure aperiam harum ratione, suscipit quas ea sequi, maiores voluptates aspernatur iste!</p>
+	</div>
+  <div class="col-lg-4">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem temporibus debitis ducimus sunt earum porro accusantium saepe, est iure aperiam harum ratione, suscipit quas ea sequi, maiores voluptates aspernatur iste!</p>
+	</div>
+
+   </div>
+
+  </div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore voluptatem dignissimos sit et reiciendis? Autem atque debitis numquam, veniam quos praesentium quibusdam, iure quia omnis quam eveniet nam unde. Sint!</p>
+<button class="btn btn-primary btn-lg">click me</button>
+    </div>
+    <div class="col-lg-8">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt distinctio dolor temporibus at doloremque delectus nisi numquam quia fugiat possimus veritatis accusamus, provident doloribus ut debitis veniam quos quibusdam? Sequi!</p>
+
+    </div>
+
+
+  </div>
+
+
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
+=====================================
+
+
+=================================================
+alert component
+================================
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+
+   
+    
+   <div class="row">
+	<div class="col-lg-4">
+    <div class="alert alert-primary" role="alert">
+      A simple primary alert—check it out!
+    </div>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum aspernatur vitae eligendi libero, consequatur eaque ullam sapiente in debitis, maiores sed laborum illo natus, pariatur suscipit temporibus. Culpa, incidunt deleniti.</p>
+	</div>
+	<div class="col-lg-4">
+    <div class="alert alert-primary" role="alert">
+      A simple primary alert—check it out!
+    </div>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem temporibus debitis ducimus sunt earum porro accusantium saepe, est iure aperiam harum ratione, suscipit quas ea sequi, maiores voluptates aspernatur iste!</p>
+	</div>
+  <div class="col-lg-4">
+    <div class="alert alert-primary" role="alert">
+      A simple primary alert—check it out!
+    </div>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem temporibus debitis ducimus sunt earum porro accusantium saepe, est iure aperiam harum ratione, suscipit quas ea sequi, maiores voluptates aspernatur iste!</p>
+	</div>
+
+   </div>
+
+  </div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore voluptatem dignissimos sit et reiciendis? Autem atque debitis numquam, veniam quos praesentium quibusdam, iure quia omnis quam eveniet nam unde. Sint!</p>
+<button class="btn btn-primary btn-lg">click me</button>
+    </div>
+    <div class="col-lg-8">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt distinctio dolor temporibus at doloremque delectus nisi numquam quia fugiat possimus veritatis accusamus, provident doloribus ut debitis veniam quos quibusdam? Sequi!</p>
+      
+
+    </div>
+
+
+  </div>
+
+
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
+===================================================
+classes for padding and margin
+mt-1   (1 represent percent) range is 1 to 5
+ml
+mb
+mr
+"container mt-4"
+
+pt,pl,pb,pr
+
+============================================================
+card component
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="card">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the acard's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      
+    </div>
+    <div class="col-lg-4">
+      
+    </div>
+
+
+
+  </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
+==================================================
+please refer to the following html components
+carousel
+navbar
+Tables
+forms
+modal 
+
+====================================================
+
+
+=============
+
+====================
+
+
+
+
+
+
